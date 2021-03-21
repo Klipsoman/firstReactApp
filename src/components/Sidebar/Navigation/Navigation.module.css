@@ -1,24 +1,27 @@
 .navigation{
     padding: 10px 20px;
 }
-.navigation ul{
+ul{
     list-style: none;
     padding: 0;
 }
 
-.navigation ul li{
+li{
     display: block;
     text-align: left;
     margin-top: 5px;
     letter-spacing: 3px;
     font-weight: 700;
 }
-
-.navigation ul li a{
+a{
     width: 100%;
     color: white; 
 }
-.navigation ul li a:hover{
+a:hover{
     color: white; 
     opacity: 0.5;
+}
+
+.activeLink{
+    color: #ff7e7e;
 }

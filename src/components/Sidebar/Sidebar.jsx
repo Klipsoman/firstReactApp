@@ -1,6 +1,6 @@
 import React from 'react'
 import Avatar from './Avatar/Avatar'
-import Navigation from './Navigtion/Navigation'
+import Navigation from './Navigation/Navigation'
 import style from './Sidebar.module.css'
 
 const Sidebar = () => {

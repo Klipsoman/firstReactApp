@@ -5,15 +5,22 @@ header{
     grid-gap: 5px;
 }
 
+.logoItem{
+    display: flex;
+}
+
 .logo{
     width: 25%;
 }
 
 .logo a{
-    
+    flex: 1 0 100%;
 }
 
 .logo a img{
     max-width: 100%;
     height: auto;
+}
+p{
+    
 }

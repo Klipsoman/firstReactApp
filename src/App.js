@@ -4,15 +4,19 @@ import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Main from './components/Content/Main';
 import Footer from './components/Footer/Footer';
+import { BrowserRouter } from 'react-router-dom';
 
   function App() {
 
-   return <div className="wrapper">
+   return <BrowserRouter>
+   
+   <div className="wrapper">
       <Header />
-      <Main />
       <Sidebar />
+      <Main /> 
       <Footer />     
     </div>;
+    </BrowserRouter>
   }
 
 export default App;

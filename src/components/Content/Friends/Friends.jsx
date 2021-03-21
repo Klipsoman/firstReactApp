@@ -4,7 +4,7 @@ import style from './Friends.module.css'
 const Friends = () => {
     return <div className={style.friends}>
         Friends
-        </div>
+    </div>
 }
 
 export default Friends
