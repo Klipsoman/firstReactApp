@@ -1,26 +1,29 @@
 header{
     padding: 10px 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto auto 1fr 1fr;
     grid-gap: 5px;
-}
-
-.logoItem{
-    display: flex;
-}
-
-.logo{
-    width: 25%;
+    align-content: center;
 }
 
 .logo a{
-    flex: 1 0 100%;
+    display: block;
+    position: relative;
+    width: 107px;
+    height: 100px;
+    overflow: hidden;
 }
-
 .logo a img{
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    pointer-events: none;
 }
-p{
-    
+header p{
+    align-self: end;
+    font-size: 1.5em;
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1;
+    user-select: none; 
 }

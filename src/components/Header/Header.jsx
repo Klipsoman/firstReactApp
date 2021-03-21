@@ -1,17 +1,17 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import style from './Header.module.css';
 
 const Header = () => {
   
     return <header>
         <div className={style.logo}>
-            <div className={style.logoItem}>
-            <a href="">
+            <NavLink to='/posts'>
               <img src="http://pngimg.com/uploads/letter_a/letter_a_PNG1.png" alt=""/>
-            </a>
-            <p>социальная сеть</p>
+            </NavLink>
             </div >
-        </div>
+        
+        <p>социальная сеть</p>
     </header>
 }
 

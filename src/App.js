@@ -9,13 +9,18 @@ import { BrowserRouter } from 'react-router-dom';
   function App() {
 
    return <BrowserRouter>
+
+   <div className="mainWrap">
    
    <div className="wrapper">
       <Header />
       <Sidebar />
       <Main /> 
       <Footer />     
-    </div>;
+    </div>
+
+    </div>
+    
     </BrowserRouter>
   }
 
