@@ -1,0 +1,24 @@
+.navigation{
+    padding: 10px 20px;
+}
+.navigation ul{
+    list-style: none;
+    padding: 0;
+}
+
+.navigation ul li{
+    display: block;
+    text-align: left;
+    margin-top: 5px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.navigation ul li a{
+    width: 100%;
+    color: white; 
+}
+.navigation ul li a:hover{
+    color: white; 
+    opacity: 0.5;
+}

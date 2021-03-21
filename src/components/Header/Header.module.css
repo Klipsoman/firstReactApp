@@ -1,0 +1,19 @@
+header{
+    padding: 10px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+}
+
+.logo{
+    width: 25%;
+}
+
+.logo a{
+    
+}
+
+.logo a img{
+    max-width: 100%;
+    height: auto;
+}
