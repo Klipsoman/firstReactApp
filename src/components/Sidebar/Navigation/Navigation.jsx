@@ -7,23 +7,25 @@ const  Navigation = () => {
            <ul>
                 <li>
                    <NavLink to="/posts" activeClassName={style.activeLink}>Посты</NavLink>
-                   <span></span>
+                   <span className="fa fa-calendar-o"></span>
                </li>
                <li>
                    <NavLink to="/friends" activeClassName={style.activeLink}>Друзья</NavLink>
-                   <span></span>
+                   <span className="fa fa-address-book-o"></span>
                </li>
                <li>
+                   {/* <li className='fa fa-envelope-o'></li> */}
                    <NavLink to="/dialogs" activeClassName={style.activeLink}>Сообщения</NavLink>
-                   <span></span>
+                   <span className='fa fa-envelope-o'></span>
                </li>
                <li>
                   <NavLink to="/statistics" activeClassName={style.activeLink}>Статистика</NavLink>    
-                   <span></span>
+                   <span className="fa fa-signal"></span>
                </li>
                <li>
+
                   <NavLink to="/news" activeClassName={style.activeLink}>Новости</NavLink>    
-                   <span></span>
+                   <span className="fa fa-newspaper-o"></span>
                </li>
            </ul>
         </nav>

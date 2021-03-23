@@ -8,11 +8,15 @@
 }
 
 .navigation li{
-    display: block;
+    display: flex;
+    align-items: center;
     text-align: left;
     margin-top: 5px;
     letter-spacing: 3px;
-    font-weight: 700;
+    font-weight: 700;  
+}
+.navigation span {
+    color: white;
 }
 .navigation a{
     width: 100%;
@@ -23,6 +27,14 @@
     opacity: 0.5;
 }
 
+.navigation a:hover + span{
+    color: white; 
+    opacity: 0.5;
+}
+
 .navigation .activeLink{
-    color: #ff7e7e;
+    color: var(--main-red);
+}
+.navigation .activeLink + span{
+    color: var(--main-red);
 }

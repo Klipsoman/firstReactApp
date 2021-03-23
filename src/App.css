@@ -14,6 +14,21 @@ a{
   text-decoration: none;
 }
 
+.mainWrap{
+
+  /* main color */
+  --main-red: #ff5a5f;
+  /* main background color */
+  /* --bgc: rgb(128, 128, 128); */
+  --bgc: rgb(173, 173, 173);
+
+  /* vars */
+  /* --box-shadow-color: firebrick; */
+  --box-shadow-color: cadetblue;
+
+  /*  */
+}
+
 .wrapper{
   width: 1240px;
   margin: auto;
@@ -31,15 +46,15 @@ a{
 
 header{
   grid-area: h;
-  padding: 0 3px 3px;
+  padding: 0 5px 3px 5px;
 }
 .sidebar{
   grid-area: s;
-  padding: 3px 3px 0 3px;
+  padding: 10px 5px 0 5px;
 }
 main{
   grid-area: c;
-  padding: 3px 3px 0 0;
+  padding: 10px 5px 0 5px;
 }
 footer{
   grid-area: f;

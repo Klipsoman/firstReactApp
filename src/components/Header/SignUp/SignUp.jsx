@@ -5,7 +5,10 @@ import style from './SignUp.module.css'
 
 const SignUp = () => {
     return  <div className={style.sign}>
-        <NavLink to='\'>Вход</NavLink>   
+        <NavLink to='\'>Вход</NavLink> 
+        <span className="fa fa-sign-in"></span>
+        
+         
     </div>   
 }
 
