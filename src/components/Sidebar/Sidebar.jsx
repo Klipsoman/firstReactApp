@@ -5,9 +5,11 @@ import style from './Sidebar.module.css'
 
 const Sidebar = () => {
     let s = 'sidebar'
-    return <aside className={`${s} ${style.sidebar}`}> 
-        <Avatar />
-        <Navigation />
+    return <aside className={`${s} ${style.sidebar}`}>
+        <div className={style.sidebarWrapper}>
+            <Avatar />
+            <Navigation />
+        </div>
     </aside>;
 }
 

@@ -31,18 +31,17 @@ a{
 
 header{
   grid-area: h;
+  padding: 0 3px 3px;
 }
 .sidebar{
   grid-area: s;
-  background-color:rgb(128, 128, 128)
-  
+  padding: 3px 3px 0 3px;
 }
 main{
   grid-area: c;
-  background-color:rgb(128, 128, 128)
+  padding: 3px 3px 0 0;
 }
 footer{
   grid-area: f;
-
 }
 

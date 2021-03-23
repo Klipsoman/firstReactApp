@@ -11,13 +11,15 @@ import Statistics from './Statistics/Statistics'
 
 const Main = (props) => {
 
-    return  <main>
-        <Route path='/posts' component={Posts} />
-        <Route path='/dialogs' render={()=><Dialogs arrFriends={props.arrFriends}/>} />
-        <Route path='/friends' render={()=><Friends arrFriends={props.arrFriends} />} />
-        <Route path='/statistics' component={Statistics} />
-        <Route path='/news' component={News} />      
-    </main>   
+    return <main>
+        <div className={style.wrapperMain}>
+            <Route path='/posts' component={Posts} />
+            <Route path='/dialogs' render={() => <Dialogs arrFriends={props.arrFriends} />} />
+            <Route path='/friends' render={() => <Friends arrFriends={props.arrFriends} />} />
+            <Route path='/statistics' component={Statistics} />
+            <Route path='/news' component={News} />
+        </div>
+    </main>
 }
 
 export default Main
