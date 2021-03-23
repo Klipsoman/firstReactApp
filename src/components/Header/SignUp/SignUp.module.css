@@ -1,0 +1,17 @@
+.sign{
+    grid-column: 4 / 5;
+
+    font-size: 22px;
+
+    padding: ;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.sign a{
+    color: rgb(59, 50, 50);
+}
+

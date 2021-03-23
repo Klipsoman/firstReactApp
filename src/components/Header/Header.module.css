@@ -1,26 +1,17 @@
-header{
-    padding: 10px 20px;
+.headerWrapper{
+    padding: 5px 10px;
     display: grid;
-    grid-template-columns: auto auto 1fr 1fr;
+    grid-template-columns: auto auto 1fr 150px;
     grid-gap: 5px;
     align-content: center;
+
+    background-color: #f1f1f1;
+    margin-bottom: 20px;
 }
 
-.logo a{
-    display: block;
-    position: relative;
-    width: 107px;
-    height: 100px;
-    overflow: hidden;
-}
-.logo a img{
-    width: 100%;
-    height: auto;
-    pointer-events: none;
-}
-header p{
+.headerWrapper p{
     align-self: end;
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #ffffff;
     font-weight: 700;
     letter-spacing: 2px;

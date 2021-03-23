@@ -22,7 +22,7 @@ a{
   
   display: grid;
   grid-template-columns: minmax(300px, 1fr) minmax(940px, 3fr); 
-  grid-template-rows: minmax(120px, auto) 1fr minmax(100px, auto);
+  grid-template-rows: 50px 1fr minmax(100px, auto);
   grid-template-areas: 
   "h h"
   "s c"
@@ -32,25 +32,25 @@ a{
 
 header{
   grid-area: h;
-  background-color: rgb(193 218 214);
+  /* background-color: rgb(193 218 214); */
 
 
 }
 .sidebar{
   grid-area: s;
-  /* background-color: rgb(193 218 214); */
+   background-color: rgb(193 218 214); 
   background-color:rgb(128, 128, 128)
- 
+  
 }
 main{
   grid-area: c;
   background-color: darkgrey;
-  /* background-color: rgb(193 218 214); */
+  background-color: rgb(193 218 214); 
 }
 footer{
   
   grid-area: f;
-  background-color: dimgray;
-  /* background-color: rgb(193 218 214); */
+  /* background-color: dimgray;
+  background-color: rgb(193 218 214); */
 }
 

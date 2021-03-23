@@ -1,0 +1,15 @@
+
+.logo a{
+    display: block;
+    position: relative;
+    width: 45px;
+    height: 40px;
+    overflow: hidden;
+
+    margin-left: 20px;
+}
+.logo a img{
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+}
