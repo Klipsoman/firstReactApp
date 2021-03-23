@@ -6,7 +6,7 @@ import Main from './components/Content/Main';
 import Footer from './components/Footer/Footer';
 import { BrowserRouter } from 'react-router-dom';
 
-  function App() {
+  function App(props) {
 
    return <BrowserRouter>
 
@@ -15,7 +15,7 @@ import { BrowserRouter } from 'react-router-dom';
    <div className="wrapper">
       <Header />
       <Sidebar />
-      <Main /> 
+      <Main arrFriends={props.Data.arrFriends}/> 
       <Footer />     
     </div>
 

@@ -9,14 +9,14 @@ import Posts from './Posts/Posts'
 import Statistics from './Statistics/Statistics'
 
 
-const Main = () => {
+const Main = (props) => {
+
     return  <main>
         <Route path='/posts' component={Posts} />
-        <Route path='/dialogs' component={Dialogs} />
-        <Route path='/friends' component={Friends} />
+        <Route path='/dialogs' render={()=><Dialogs arrFriends={props.arrFriends}/>} />
+        <Route path='/friends' render={()=><Friends arrFriends={props.arrFriends} />} />
         <Route path='/statistics' component={Statistics} />
-        <Route path='/news' component={News} />
-        
+        <Route path='/news' component={News} />      
     </main>   
 }
 
