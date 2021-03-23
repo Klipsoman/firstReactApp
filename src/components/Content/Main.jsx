@@ -14,8 +14,8 @@ const Main = () => {
         <Route path='/posts' component={Posts} />
         <Route path='/dialogs' component={Dialogs} />
         <Route path='/friends' component={Friends} />
-        <Route path='/statistics' component={News} />
-        <Route path='/news' component={Statistics} />
+        <Route path='/statistics' component={Statistics} />
+        <Route path='/news' component={News} />
         
     </main>   
 }
