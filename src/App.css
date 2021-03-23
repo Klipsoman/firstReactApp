@@ -27,30 +27,22 @@ a{
   "h h"
   "s c"
   "f f";
-  grid-gap: 10px;
 }
 
 header{
   grid-area: h;
-  /* background-color: rgb(193 218 214); */
-
-
 }
 .sidebar{
   grid-area: s;
-   background-color: rgb(193 218 214); 
   background-color:rgb(128, 128, 128)
   
 }
 main{
   grid-area: c;
-  background-color: darkgrey;
-  background-color: rgb(193 218 214); 
+  background-color:rgb(128, 128, 128)
 }
 footer{
-  
   grid-area: f;
-  /* background-color: dimgray;
-  background-color: rgb(193 218 214); */
+
 }
 

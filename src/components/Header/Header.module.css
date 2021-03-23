@@ -5,8 +5,7 @@
     grid-gap: 5px;
     align-content: center;
 
-    background-color: #f1f1f1;
-    margin-bottom: 20px;
+    background-color:rgb(128, 128, 128)
 }
 
 .headerWrapper p{
