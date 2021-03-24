@@ -13,9 +13,9 @@ const Main = (props) => {
 
     return <main>
         <div className={style.wrapperMain}>
-            <Route path='/posts' component={Posts} />
-            <Route path='/dialogs' render={() => <Dialogs arrFriends={props.arrFriends} />} />
-            <Route path='/friends' render={() => <Friends arrFriends={props.arrFriends} />} />
+            <Route path='/posts' render={ () => <Posts /> } />
+            <Route path='/dialogs' render={() => <Dialogs state={props.state} />} />
+            <Route path='/friends' render={() => <Friends state={props.state} />} />
             <Route path='/statistics' component={Statistics} />
             <Route path='/news' component={News} />
         </div>

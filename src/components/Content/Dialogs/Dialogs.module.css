@@ -3,15 +3,17 @@
     display: grid;
     grid-template-columns: 2fr 4fr;
     grid-template-rows: auto;
+
+    color: white;
 }
 
 .dialogsItems{
-    background-color: rgb(180, 141, 141);
     padding: 10px;
+    border: 1px solid black;
 }
 
 .dialog{
-    background-color: rgb(146, 172, 152);
+    border: 1px solid black;
 }
 
 .dialogsItem{
@@ -20,9 +22,11 @@
     align-items: center;
 
     margin-top: 10px;
+    padding: 6px;
 
     font-size: 12px; 
-    color: beige;
+    color: white;
+    border: 1px solid black;
 }
 
 .dialogsItem:nth-child(1){

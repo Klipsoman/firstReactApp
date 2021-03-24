@@ -15,7 +15,7 @@ import { BrowserRouter } from 'react-router-dom';
    <div className="wrapper">
       <Header />
       <Sidebar />
-      <Main arrFriends={props.Data.arrFriends}/> 
+      <Main state={props.state}/> 
       <Footer />     
     </div>
 

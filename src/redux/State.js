@@ -1,5 +1,5 @@
-let Data = {
-    arrFriends: [
+let State = {
+    friendsPage: {arrFriends: [
         {   
             id: 1,
             firstName: 'Lisa',
@@ -67,6 +67,10 @@ let Data = {
             img: 'https://vraki.net/sites/default/files/mood/u.jpg'
         },
       ]
+},
+    messagePage: {},
+    postsPage: {},
+    
 }
 
-export default Data
+export default State

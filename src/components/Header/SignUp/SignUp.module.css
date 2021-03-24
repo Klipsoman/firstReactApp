@@ -3,12 +3,9 @@
 
     font-size: 22px;
 
-    padding: ;
-
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-    
+    align-items: center;   
 }
 
 .sign a{
@@ -23,7 +20,6 @@
 .sign a:hover{
     color: white;
 }
-
 
 .sign a:hover + span{
     color: white;
