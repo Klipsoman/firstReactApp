@@ -1,3 +1,5 @@
+import { ReRender } from '../ReRender'
+
 let State = {
     friendsPage: {arrFriends: [
         {   
@@ -69,8 +71,54 @@ let State = {
       ]
 },
     messagePage: {},
-    postsPage: {},
-    
+    postsPage: { posts:[
+        {
+            id: 1,
+            firstName: 'Andrey',
+            lastName: 'Zharov',
+            img: 'https://pbs.twimg.com/media/EXpP15yXYAAaQPU.jpg',
+            date: '2021.03.24',
+            likes: 100,
+            postTitle: 'First post',
+            postMessage: 'Hello its my first post!!!'
+        },
+        {
+            id: 2,
+            firstName: 'Viktor',
+            lastName: 'Zhukov',
+            img: 'https://pbs.twimg.com/media/EXpP15yXYAAaQPU.jpg',
+            date: '2021.03.25',
+            likes: 10,
+            postTitle: 'mister Viktor',
+            postMessage: 'Hi hi hi!'
+        },
+        // {
+        //     id: 3,
+        //     firstName: 'Vlad',
+        //     lastName: 'Shishkin',
+        //     img: 'https://pbs.twimg.com/media/EXpP15yXYAAaQPU.jpg',
+        //     date: '2021.03.26',
+        //     likes: 20,
+        //     postTitle: 'heyhey',
+        //     postMessage: 'post!!!'
+        // },
+    ]},  
+}
+
+export let addPost = (message) => {
+    let post = {
+        id: 3,
+        firstName: 'Vladdddd',
+        lastName: 'Shishkin',
+        img: 'https://pbs.twimg.com/media/EXpP15yXYAAaQPU.jpg',
+        date: '2021.03.26',
+        likes: 20,
+        postTitle: 'heyhey',
+        postMessage: message
+    }
+ 
+    State.postsPage.posts.push(post)
+    ReRender(State)
 }
 
 export default State

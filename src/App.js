@@ -7,7 +7,7 @@ import Footer from './components/Footer/Footer';
 import { BrowserRouter } from 'react-router-dom';
 
   function App(props) {
-
+    
    return <BrowserRouter>
 
    <div className="mainWrap">
@@ -15,7 +15,7 @@ import { BrowserRouter } from 'react-router-dom';
    <div className="wrapper">
       <Header />
       <Sidebar />
-      <Main state={props.state}/> 
+      <Main state={props.state} addPost={props.addPost}/> 
       <Footer />     
     </div>
 

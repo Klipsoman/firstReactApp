@@ -1,9 +1,10 @@
 import React from 'react'
+import AllPosts from './AllPosts/AllPosts'
 import style from './Posts.module.css'
 
 
 
-const Posts = () => {
+const Posts = (props) => {
     
     function createPost(e){
         if(e.target.nextElementSibling.style.display === 'block'){
@@ -16,24 +17,27 @@ const Posts = () => {
         
     }
 
+    let textArea = React.createRef()
+
+    function sendPost(){
+        let text = textArea.current.value 
+        console.log(text)
+        props.addPost(text)
+        textArea.current.value = ''
+    }
+
     return <div className={style.posts}>
 
         <div className={style.createPost}>
             <h5 onClick={createPost}>Создать запись</h5>
-            <textarea name="" id="" cols="30" rows="10" ></textarea>
-            <button>New post!</button>
+            <textarea name="" id="" cols="30" rows="10" ref={textArea} ></textarea>
+            <button onClick={ sendPost }>New post!</button>
         </div>
 
         <h2>Все записи</h2>
-        <div className={style.allPosts}>
-            <div className={style.post}></div>
-            <div className={style.post}></div>
-            <div className={style.post}></div>
-            <div className={style.post}></div>
-            <div className={style.post}></div>
-            <div className={style.post}></div>
-        </div>
 
+        <AllPosts state={props.state}/>
+     
 
 
     </div>

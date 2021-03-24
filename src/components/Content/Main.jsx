@@ -13,7 +13,7 @@ const Main = (props) => {
 
     return <main>
         <div className={style.wrapperMain}>
-            <Route path='/posts' render={ () => <Posts /> } />
+            <Route path='/posts' render={ () => <Posts state={props.state} addPost={props.addPost}/> } />
             <Route path='/dialogs' render={() => <Dialogs state={props.state} />} />
             <Route path='/friends' render={() => <Friends state={props.state} />} />
             <Route path='/statistics' component={Statistics} />
