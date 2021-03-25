@@ -1,0 +1,28 @@
+textarea{
+    width: 100%;
+    height: 230px;
+    resize: none;
+    outline: none;
+    border: none;
+
+    padding: 20px;
+    margin-top: 10px;
+
+    font-size: 1.5em;
+    color: #03080fc7;
+
+    background-color: rgb(212, 207, 207); 
+
+    display: none;
+}
+
+textarea:focus {
+    border: 2px solid gray;
+    border-radius: 3px;
+}
+
+button{
+    margin-top: 10px;
+    padding: 5px 10px;
+    display: none;
+}

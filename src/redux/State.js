@@ -1,4 +1,9 @@
-import { ReRender } from '../ReRender'
+let renderDocument;
+
+export const func = (observer) => {
+    renderDocument = observer
+    renderDocument()
+}
 
 let State = {
     friendsPage: {arrFriends: [
@@ -71,7 +76,8 @@ let State = {
       ]
 },
     messagePage: {},
-    postsPage: { posts:[
+    postsPage: { 
+        posts:[
         {
             id: 1,
             firstName: 'Andrey',
@@ -102,10 +108,12 @@ let State = {
         //     postTitle: 'heyhey',
         //     postMessage: 'post!!!'
         // },
-    ]},  
+    ], 
+        newTextPost: '123',
+},  
 }
 
-export let addPost = (message) => {
+export let addPost = () => {
     let post = {
         id: 3,
         firstName: 'Vladdddd',
@@ -114,11 +122,16 @@ export let addPost = (message) => {
         date: '2021.03.26',
         likes: 20,
         postTitle: 'heyhey',
-        postMessage: message
+        postMessage: State.postsPage.newTextPost
     }
- 
     State.postsPage.posts.push(post)
-    ReRender(State)
+    State.postsPage.newTextPost = ''
+    renderDocument()
+}
+
+export const changeNewPostText = (newtext) => {
+    State.postsPage.newTextPost = newtext
+    renderDocument()
 }
 
 export default State

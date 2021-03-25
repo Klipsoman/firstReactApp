@@ -3,7 +3,7 @@ import style from './Post.module.css'
 
 const Post = (props) => {
 
-    let arrPost = props.state.postsPage.posts.map(item => {
+    let arrPost = props.postsPage.posts.map(item => {
         return <div className={style.post} key={item.id}>
             <div className={style.postProfile}>
 

@@ -6,7 +6,7 @@ const AllPosts = (props) => {
     return <div className={style.allPostsWrapper}>
         <div className={style.allPosts}>  
 
-            <Post state={props.state}/>
+            <Post postsPage={props.postsPage}/>
         
         </div>
     </div>

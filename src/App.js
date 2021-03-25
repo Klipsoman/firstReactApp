@@ -15,7 +15,7 @@ import { BrowserRouter } from 'react-router-dom';
    <div className="wrapper">
       <Header />
       <Sidebar />
-      <Main state={props.state} addPost={props.addPost}/> 
+      <Main state={props.state} addPost={props.addPost} changeNewPostText={props.changeNewPostText}/> 
       <Footer />     
     </div>
 

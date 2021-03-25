@@ -1,9 +1,24 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import State from './redux/State';
-import { ReRender } from './ReRender'
+import state from './redux/State';
+import App from './App'
+import { addPost } from './redux/State'
+import { func } from './redux/State'
+import { changeNewPostText } from './redux/State'
 
-ReRender(State)
+let ReRender = () => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App state={state} addPost={addPost} changeNewPostText={changeNewPostText}/>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}
+
+func(ReRender)
+
 
 
 
