@@ -1,8 +1,8 @@
 import React from 'react'
 import style from './Post.module.css'
+import PropTypes from 'prop-types'
 
 const Post = (props) => {
-
     let arrPost = props.postsPage.posts.map(item => {
         return <div className={style.post} key={item.id}>
             <div className={style.postProfile}>
@@ -33,5 +33,9 @@ const Post = (props) => {
             {  arrPost  }
     </>
 }
+
+Post.propTypes = {
+    postsPage: PropTypes.object,
+  }
 
 export default Post

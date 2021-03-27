@@ -1,5 +1,6 @@
 import React from 'react'
 import style from './Dialogs.module.css'
+import PropTypes from 'prop-types'
 
 const Dialogs = (props) => {
 
@@ -26,8 +27,25 @@ const Dialogs = (props) => {
                 <div>Hello!</div>
                 <div>Hi!</div>
             </div>
+            <div className={style.writtenBlock}>
+                <div>
+                    <textarea name="" id="" cols="30" rows="10" value="123"></textarea>
+                </div>
+                <div>
+                    <button>Send</button>
+                </div>
+            </div>
         </div>
     </div>
 }
+
+
+Dialogs.propTypes = {
+    state: PropTypes.object,
+    addPost: PropTypes.func,
+    changeNewPostText: PropTypes.func,
+    postsPage: PropTypes.object
+  }
+
 
 export default Dialogs

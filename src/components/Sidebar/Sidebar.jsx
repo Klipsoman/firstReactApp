@@ -4,7 +4,7 @@ import Navigation from './Navigation/Navigation'
 import ProfileInfo from './ProfileInfo/ProfileInfo'
 import style from './Sidebar.module.css'
 
-const Sidebar = (props) => {
+const Sidebar = () => {
     let s = 'sidebar'
     return <aside className={`${s} ${style.sidebar}`}>
         <div className={style.sidebarWrapper}>

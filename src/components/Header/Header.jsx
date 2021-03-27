@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import style from './Header.module.css';
 import Logo from './Logo/Logo';
 import SignUp from './SignUp/SignUp';

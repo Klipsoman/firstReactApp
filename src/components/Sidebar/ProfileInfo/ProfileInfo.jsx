@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './ProfileInfo.module.css'
 
-const ProfileInfo = (props) => {
+const ProfileInfo = () => {
   
     function toggleLikes(e){
         e.target.classList.contains('fa-heart-o') ? e.target.classList.replace('fa-heart-o', 'fa-heart') : e.target.classList.replace('fa-heart', 'fa-heart-o');

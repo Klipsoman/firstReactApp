@@ -2,22 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import state from './redux/State';
+import Store from './redux/State';
 import App from './App'
-import { addPost } from './redux/State'
-import { func } from './redux/State'
-import { changeNewPostText } from './redux/State'
+import PropTypes from 'prop-types'
 
 let ReRender = () => {
   ReactDOM.render(
     <React.StrictMode>
-      <App state={state} addPost={addPost} changeNewPostText={changeNewPostText}/>
+      <App state={Store.getState()} 
+      // addPost={Store.addPost.bind(Store)} 
+      // changeNewPostText={Store.changeNewPostText.bind(Store)}
+          dispatch={Store.dispatch.bind(Store)}
+      />
     </React.StrictMode>,
     document.getElementById('root')
   );
 }
 
-func(ReRender)
+ReRender.propTypes ={
+  state: PropTypes.object,
+  addPost: PropTypes.func,
+  changeNewPostText: PropTypes.string,
+  dispatch: PropTypes.func
+}
+
+Store.func(ReRender)
 
 
 

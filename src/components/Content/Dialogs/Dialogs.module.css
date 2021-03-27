@@ -50,3 +50,13 @@
 .friendName{
     margin-left: 10px;
 }
+
+
+.writtenBlock{
+    height: 200px;
+}
+
+.writtenBlock textarea{
+    width: 100%;
+    height: 250px;
+}

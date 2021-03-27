@@ -1,5 +1,6 @@
 import React from 'react'
 import style from './Friends.module.css'
+import PropTypes from 'prop-types'
 
 const Friends = (props) => {
 
@@ -19,5 +20,12 @@ const Friends = (props) => {
 
     </div>
 }
+
+Friends.propTypes = {
+    state: PropTypes.object,
+    addPost: PropTypes.func,
+    changeNewPostText: PropTypes.func,
+    postsPage: PropTypes.object
+  }
 
 export default Friends
