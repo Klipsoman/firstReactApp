@@ -19,7 +19,7 @@ const Main = (props) => {
                                                  dispatch={props.dispatch}
                                                  /> 
                                                  } />
-            <Route path='/dialogs' render={() => <Dialogs state={props.state} />} />
+            <Route path='/dialogs' render={() => <Dialogs state={props.state} dispatch={props.dispatch}/>} />
             <Route path='/friends' render={() => <Friends state={props.state} />} />
             <Route path='/statistics' component={Statistics} />
             <Route path='/news' component={News} />

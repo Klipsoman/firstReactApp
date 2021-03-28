@@ -14,6 +14,12 @@
 
 .dialog{
     border: 1px solid black;
+    display: grid;
+    grid-template-rows: 1fr 300px;
+}
+
+.dialogMessages{
+    padding: 10px 20px;
 }
 
 .dialogsItem{
@@ -52,11 +58,18 @@
 }
 
 
-.writtenBlock{
-    height: 200px;
-}
+/* .writtenBlock{
+    
+} */
 
 .writtenBlock textarea{
     width: 100%;
     height: 250px;
+}
+
+.messageButton{
+    display: block;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
 }

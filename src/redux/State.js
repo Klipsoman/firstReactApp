@@ -1,6 +1,9 @@
 const ADDPOST = 'ADD-POST'
 const CHANGENEWPOSTTEXT = 'CHANGE-NEW-POST-TEXT'
 
+const CHANGENEWMESSAGETEXT = 'CHANGE-NEW-MESSAGE-TEXT'
+const SENDMESSAGE = 'SEND-MESSAGE'
+
 let Store = {
 
     _state: {
@@ -73,7 +76,28 @@ let Store = {
             },
           ]
     },
-        messagePage: {},
+        messagePage: {
+            friendsItem: [{}],
+            messages: [
+                {
+               id: 1,
+               message: 'Hello!'         
+            },
+            {
+                id: 2,
+                message: 'Hi!'         
+             },
+             {
+                id: 3,
+                message: 'How are you?'         
+             },
+             {
+                id: 4,
+                message: 'Cool!'         
+             },
+        ],
+            newMessageText: 'new text'
+        },
         postsPage: { 
             posts:[
             {
@@ -140,10 +164,20 @@ let Store = {
             Store._state.postsPage.posts.push(post)
             Store._state.postsPage.newTextPost = ''
             this._renderDocument()
-
         } else if(action.type === CHANGENEWPOSTTEXT){
             Store._state.postsPage.newTextPost = action.text
             this._renderDocument()
+        } else if(action.type === CHANGENEWMESSAGETEXT){
+            this._state.messagePage.newMessageText = action.text
+            this._renderDocument()
+        }  else if(action.type === SENDMESSAGE){
+            this._state.messagePage.messages.push(
+                {
+                    id:5,
+                    message: this._state.messagePage.newMessageText
+                })
+                this._state.messagePage.newMessageText = ''
+                this._renderDocument()
         }
     }
 
@@ -156,5 +190,17 @@ export const changeNewPostTextActionCreator = (text) => ({
         type: CHANGENEWPOSTTEXT,
         text: text
 })
+
+
+export const changeNewMessageTextActionCreator = (text) => ({
+        type: CHANGENEWMESSAGETEXT,
+        text
+})
+export const sendNewMessageActionCreator = () => ({
+        type: SENDMESSAGE
+})
+
+
+
 
 export default Store
