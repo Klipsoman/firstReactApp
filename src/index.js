@@ -9,10 +9,7 @@ import PropTypes from 'prop-types'
 let ReRender = () => {
   ReactDOM.render(
     <React.StrictMode>
-      <App state={Store.getState()} 
-      // addPost={Store.addPost.bind(Store)} 
-      // changeNewPostText={Store.changeNewPostText.bind(Store)}
-          dispatch={Store.dispatch.bind(Store)}
+      <App state={Store.getState()} dispatch={Store.dispatch.bind(Store)}
       />
     </React.StrictMode>,
     document.getElementById('root')

@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './CreatePost.module.css'
 import PropTypes from 'prop-types'
-import { addPostActionCreator, changeNewPostTextActionCreator } from '../../../../redux/State'
+import { addPostActionCreator, changeNewPostTextActionCreator } from '../../../../redux/PostsPageReducer'
 
 const CreatePost = (props) => {
     

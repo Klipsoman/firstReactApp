@@ -1,8 +1,5 @@
-const ADDPOST = 'ADD-POST'
-const CHANGENEWPOSTTEXT = 'CHANGE-NEW-POST-TEXT'
-
-const CHANGENEWMESSAGETEXT = 'CHANGE-NEW-MESSAGE-TEXT'
-const SENDMESSAGE = 'SEND-MESSAGE'
+import { PostsPageReducer } from "./PostsPageReducer"
+import { MessagesPageReducer } from './MessagesPageReducer'
 
 let Store = {
 
@@ -52,24 +49,6 @@ let Store = {
             },
             {
                 id: 8,
-                firstName: 'Pes',
-                lastName: 'Barbos',
-                img: 'https://vraki.net/sites/default/files/mood/u.jpg'
-            },
-            {
-                id: 9,
-                firstName: 'Pes',
-                lastName: 'Barbos',
-                img: 'https://vraki.net/sites/default/files/mood/u.jpg'
-            },
-            {
-                id: 10,
-                firstName: 'Pes',
-                lastName: 'Barbos',
-                img: 'https://vraki.net/sites/default/files/mood/u.jpg'
-            },
-            {
-                id: 11,
                 firstName: 'Pes',
                 lastName: 'Barbos',
                 img: 'https://vraki.net/sites/default/files/mood/u.jpg'
@@ -149,58 +128,12 @@ let Store = {
 },
 
     dispatch(action){
-
-        if(action.type === ADDPOST){
-            let post = {
-                id: 3,
-                firstName: 'Vladdddd',
-                lastName: 'Shishkin',
-                img: 'https://pbs.twimg.com/media/EXpP15yXYAAaQPU.jpg',
-                date: '2021.03.26',
-                likes: 20,
-                postTitle: 'heyhey',
-                postMessage: Store._state.postsPage.newTextPost
-            }
-            Store._state.postsPage.posts.push(post)
-            Store._state.postsPage.newTextPost = ''
-            this._renderDocument()
-        } else if(action.type === CHANGENEWPOSTTEXT){
-            Store._state.postsPage.newTextPost = action.text
-            this._renderDocument()
-        } else if(action.type === CHANGENEWMESSAGETEXT){
-            this._state.messagePage.newMessageText = action.text
-            this._renderDocument()
-        }  else if(action.type === SENDMESSAGE){
-            this._state.messagePage.messages.push(
-                {
-                    id:5,
-                    message: this._state.messagePage.newMessageText
-                })
-                this._state.messagePage.newMessageText = ''
-                this._renderDocument()
-        }
+        MessagesPageReducer(this._state.messagePage, action)
+        PostsPageReducer(this._state.postsPage, action)
+        
+        this._renderDocument()
     }
 
 }
-
-
-export const addPostActionCreator = () =>  ( {type: ADDPOST} )
-
-export const changeNewPostTextActionCreator = (text) => ({
-        type: CHANGENEWPOSTTEXT,
-        text: text
-})
-
-
-export const changeNewMessageTextActionCreator = (text) => ({
-        type: CHANGENEWMESSAGETEXT,
-        text
-})
-export const sendNewMessageActionCreator = () => ({
-        type: SENDMESSAGE
-})
-
-
-
 
 export default Store

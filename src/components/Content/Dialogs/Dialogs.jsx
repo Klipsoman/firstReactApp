@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Dialogs.module.css'
 import PropTypes from 'prop-types'
-import { changeNewMessageTextActionCreator, sendNewMessageActionCreator } from '../../../redux/State'
+import { changeNewMessageTextActionCreator, sendNewMessageActionCreator } from '../../../redux/MessagesPageReducer'
 
 const Dialogs = (props) => {
 
