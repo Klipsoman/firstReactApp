@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const Friends = (props) => {
 
-    const myFriends = props.state.friendsPage.arrFriends.map((item) => {
+    const myFriends = props.state.arrFriends.map((item) => {
         return <div className={style.friend} key={item.id}>
             <div className={style.friendImgBlock}>
                 <img src={item.img} alt="" />

@@ -2,19 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Store from './redux/State';
+import store from './redux/redux-store';
 import App from './App'
 import PropTypes from 'prop-types'
 
 let ReRender = () => {
   ReactDOM.render(
     <React.StrictMode>
-      <App state={Store.getState()} dispatch={Store.dispatch.bind(Store)}
+      <App state={store.getState()} dispatch={store.dispatch.bind(store)}
       />
     </React.StrictMode>,
     document.getElementById('root')
   );
 }
+
+ReRender()
 
 ReRender.propTypes ={
   state: PropTypes.object,
@@ -23,7 +25,7 @@ ReRender.propTypes ={
   dispatch: PropTypes.func
 }
 
-Store.func(ReRender)
+store.subscribe(ReRender)
 
 
 

@@ -20,7 +20,7 @@ const Main = (props) => {
                                                  /> 
                                                  } />
             <Route path='/dialogs' render={() => <Dialogs state={props.state} dispatch={props.dispatch}/>} />
-            <Route path='/friends' render={() => <Friends state={props.state} />} />
+            <Route path='/friends' render={() => <Friends state={props.state.friendsPage} />} />
             <Route path='/statistics' component={Statistics} />
             <Route path='/news' component={News} />
         </div>
