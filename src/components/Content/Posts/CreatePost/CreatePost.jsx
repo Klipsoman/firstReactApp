@@ -1,7 +1,6 @@
 import React from 'react'
 import style from './CreatePost.module.css'
 import PropTypes from 'prop-types'
-import { addPostActionCreator, changeNewPostTextActionCreator } from '../../../../redux/PostsPageReducer'
 
 const CreatePost = (props) => {
     
@@ -14,31 +13,33 @@ const CreatePost = (props) => {
         e.target.nextElementSibling.nextElementSibling.style.display = 'block'
         }
     }
-
-    let textArea = React.createRef()
     
-    function onAreaChange(){
-        let text = textArea.current.value
-        props.dispatch(changeNewPostTextActionCreator(text))
+    function onAreaChange(e){
+        let text = e.target.value
+        props.onAreaChangeC(text)
     }
 
     function sendNewPost(){
-       props.dispatch(addPostActionCreator())
+        props.sendNewPostC()
     }
 
     return <div className={style.createPost}>
         <h5 onClick={showPost}>Создать запись</h5>
-        <textarea className={style.textarea} ref={textArea} onInput= { onAreaChange } value={props.postsPage.newTextPost}></textarea>
+        <textarea className={style.textarea} onInput= { onAreaChange } value={props.postsPage.newTextPost}></textarea>
         <button className={style.button} onClick={sendNewPost}>New post!</button>
     </div>
 }
 
 CreatePost.propTypes = {
+    store: PropTypes.object,
     state: PropTypes.object,
     addPost: PropTypes.func,
     changeNewPostText: PropTypes.func,
     postsPage: PropTypes.object,
     dispatch: PropTypes.func,
+    sendNewPostC: PropTypes.func,
+    onAreaChangeC: PropTypes.func
+
   }
 
 

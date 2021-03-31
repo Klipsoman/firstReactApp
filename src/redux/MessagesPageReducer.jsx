@@ -26,19 +26,23 @@ let initialState = {
 
 export const MessagesPageReducer = (state = initialState, action) => {
 
-    if(action.type === CHANGENEWMESSAGETEXT){
-        state.newMessageText = action.text
-    }  else if(action.type === SENDMESSAGE){
+    switch (action.type){
+        case CHANGENEWMESSAGETEXT:
+            state.newMessageText = action.text
+            return state
+        case SENDMESSAGE: 
         state.messages.push(
             {
                 id:5,
                 message: state.newMessageText
             })
             state.newMessageText = ''
+            return state
+        default: 
+        return state
     }
-
-    return state
 }
+
 
 export const changeNewMessageTextActionCreator = (text) => ({
     type: CHANGENEWMESSAGETEXT,

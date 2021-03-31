@@ -1,7 +1,6 @@
 const ADDPOST = 'ADD-POST'
 const CHANGENEWPOSTTEXT = 'CHANGE-NEW-POST-TEXT'
 
-
 let initialState = { 
     posts:[
     {
@@ -30,24 +29,28 @@ let initialState = {
 
 export const PostsPageReducer = (state = initialState, action) => {
 
-    if(action.type === ADDPOST){
-        let post = {
-            id: 3,
-            firstName: 'Vladdddd',
-            lastName: 'Shishkin',
-            img: 'https://pbs.twimg.com/media/EXpP15yXYAAaQPU.jpg',
-            date: '2021.03.26',
-            likes: 20,
-            postTitle: 'heyhey',
-            postMessage: state.newTextPost
-        }
-        state.posts.push(post)
-        state.newTextPost = ''
-    } else if(action.type === CHANGENEWPOSTTEXT){
-        state.newTextPost = action.text
-    } 
+    let post = {
+        id: 3,
+        firstName: 'Vladdddd',
+        lastName: 'Shishkin',
+        img: 'https://pbs.twimg.com/media/EXpP15yXYAAaQPU.jpg',
+        date: '2021.03.26',
+        likes: 20,
+        postTitle: 'heyhey',
+        postMessage: state.newTextPost
+    }
 
-    return state
+    switch (action.type) {
+        case ADDPOST: 
+            state.posts.push(post)
+            state.newTextPost = ''
+            return state
+        case CHANGENEWPOSTTEXT: 
+             state.newTextPost = action.text
+             return state
+        default:
+            return state
+    }
 }
 
 export const addPostActionCreator = () =>  ( {type: ADDPOST} )

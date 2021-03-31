@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Dialogs.module.css'
 import PropTypes from 'prop-types'
-import { changeNewMessageTextActionCreator, sendNewMessageActionCreator } from '../../../redux/MessagesPageReducer'
+// import { changeNewMessageTextActionCreator, sendNewMessageActionCreator } from '../../../redux/MessagesPageReducer'
 
 const Dialogs = (props) => {
 
@@ -11,19 +11,18 @@ const Dialogs = (props) => {
 
     function sendOnEnterPress(e){
         if(e.key === 'Enter' && !e.shiftKey){
-            props.dispatch(sendNewMessageActionCreator())
+            props.sendOnEnterPressC()
          }
     } 
     
-    function sendMessage() {
-            props.dispatch(sendNewMessageActionCreator())
-    }
-
     function changeNewMessageText(e){
        let newText = e.target.value
-       props.dispatch(changeNewMessageTextActionCreator(newText))
+       props.changeNewMessageTextC(newText)
     }
 
+    function sendMessage() {
+       props.sendMessageC()
+    }
 
 
     let arrDialogsItem = props.state.friendsPage.arrFriends.map((item) => {
@@ -69,7 +68,10 @@ Dialogs.propTypes = {
     addPost: PropTypes.func,
     changeNewPostText: PropTypes.func,
     postsPage: PropTypes.object,
-    dispatch: PropTypes.func
+    dispatch: PropTypes.func,
+    sendOnEnterPressC: PropTypes.func,
+    changeNewMessageTextC: PropTypes.func,
+    sendMessageC: PropTypes.func,
   }
 
 

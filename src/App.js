@@ -18,9 +18,8 @@ import PropTypes from 'prop-types';
       <Header />
       <Sidebar />
       <Main state={props.state}
-            // addPost={props.addPost}
-            // changeNewPostText={props.changeNewPostText}
             dispatch={props.dispatch}
+            store={props.store}
             /> 
       <Footer />     
     </div>
@@ -31,6 +30,7 @@ import PropTypes from 'prop-types';
   }
 
   App.propTypes = {
+    store: PropTypes.object,
     state: PropTypes.object,
     addPost: PropTypes.func,
     changeNewPostText: PropTypes.func,
