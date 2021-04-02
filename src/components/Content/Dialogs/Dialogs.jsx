@@ -52,7 +52,7 @@ const Dialogs = (props) => {
             <div className={style.writtenBlock}>
                 <div>
                     <textarea onInput={changeNewMessageText} value={props.state.messagePage.newMessageText}
-                     onKeyDown={sendOnEnterPress}></textarea>
+                     onKeyDown={sendOnEnterPress} placeholder='Enter your message here'></textarea>
                 </div>
                 <div>
                     <button className={style.messageButton} onClick={sendMessage}>Send</button>
@@ -65,13 +65,9 @@ const Dialogs = (props) => {
 
 Dialogs.propTypes = {
     state: PropTypes.object,
-    addPost: PropTypes.func,
-    changeNewPostText: PropTypes.func,
-    postsPage: PropTypes.object,
-    dispatch: PropTypes.func,
     sendOnEnterPressC: PropTypes.func,
     changeNewMessageTextC: PropTypes.func,
-    sendMessageC: PropTypes.func,
+    sendMessageC: PropTypes.func
   }
 
 

@@ -1,41 +1,28 @@
-import React from 'react'
 import { changeNewMessageTextActionCreator, sendNewMessageActionCreator } from '../../../redux/MessagesPageReducer'
 import Dialogs from './Dialogs'
-import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
-const DialogsContainer = (props) => {
-    
-    let state = props.store.getState()
-    
-    function sendOnEnterPressC(){
-        props.store.dispatch(sendNewMessageActionCreator())
-    } 
-    
-    function sendMessageC() {
-        props.store.dispatch(sendNewMessageActionCreator())
+
+let mapStateToProps = (state) => {
+    return {
+        state: state
     }
-
-    function changeNewMessageTextC(text){
-        props.store.dispatch(changeNewMessageTextActionCreator(text))
-    }
-    
-    return (
-           <Dialogs sendMessageC={sendMessageC} 
-                    changeNewMessageTextC={changeNewMessageTextC}
-                    sendOnEnterPressC={sendOnEnterPressC}
-                    state={state}
-                    />
-    )
-
 }
 
-DialogsContainer.propTypes = {
-    store: PropTypes.object,
-    state: PropTypes.object,
-    addPost: PropTypes.func,
-    changeNewPostText: PropTypes.func,
-    postsPage: PropTypes.object,
-    dispatch: PropTypes.func,
-  }
+let mapDispatchToProps = (dispatch) => {
+    return {
+        sendOnEnterPressC: () => {
+            dispatch(sendNewMessageActionCreator())
+        },
+        sendMessageC: () => {
+            dispatch(sendNewMessageActionCreator())
+        },
+        changeNewMessageTextC: (text) => {
+            dispatch(changeNewMessageTextActionCreator(text))
+        },
+    }
+}
+
+let DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
 
 export default DialogsContainer

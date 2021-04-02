@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const Friends = (props) => {
 
-    const myFriends = props.state.arrFriends.map((item) => {
+    const myFriends = props.arrFriends.map((item) => {
         return <div className={style.friend} key={item.id}>
             <div className={style.friendImgBlock}>
                 <img src={item.img} alt="" />
@@ -22,10 +22,7 @@ const Friends = (props) => {
 }
 
 Friends.propTypes = {
-    state: PropTypes.object,
-    addPost: PropTypes.func,
-    changeNewPostText: PropTypes.func,
-    postsPage: PropTypes.object
+    arrFriends: PropTypes.array
   }
 
 export default Friends

@@ -1,13 +1,13 @@
 import React from 'react'
 import style from './AllPosts.module.css'
-import Post from './Post/Post'
 import PropTypes from 'prop-types'
+import PostContainer from './Post/PostContainer'
 
-const AllPosts = (props) => {
+const AllPosts = () => {
     return <div className={style.allPostsWrapper}>
         <div className={style.allPosts}>  
 
-            <Post postsPage={props.postsPage}/>
+            <PostContainer/>
         
         </div>
     </div>

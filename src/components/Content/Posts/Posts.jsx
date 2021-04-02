@@ -6,15 +6,13 @@ import CreatePostContainer from './CreatePost/CreatePostContainer'
 
 
 
-const Posts = (props) => {
+const Posts = () => {
 
     return <div className={style.posts}>
 
-        <CreatePostContainer store={props.store}
-        />
-
+        <CreatePostContainer />
         <h2>Все записи</h2>
-        <AllPosts postsPage={props.postsPage}/>
+        <AllPosts/>
 
     </div>
 }

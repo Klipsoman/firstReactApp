@@ -25,8 +25,8 @@ const CreatePost = (props) => {
 
     return <div className={style.createPost}>
         <h5 onClick={showPost}>Создать запись</h5>
-        <textarea className={style.textarea} onInput= { onAreaChange } value={props.postsPage.newTextPost}></textarea>
-        <button className={style.button} onClick={sendNewPost}>New post!</button>
+        <textarea className={style.textarea} onInput= { onAreaChange } value={ props.newTextPost } placeholder='Enter your text here'></textarea>
+        <button className={style.button} onClick={ sendNewPost }>New post!</button>
     </div>
 }
 
@@ -38,9 +38,8 @@ CreatePost.propTypes = {
     postsPage: PropTypes.object,
     dispatch: PropTypes.func,
     sendNewPostC: PropTypes.func,
-    onAreaChangeC: PropTypes.func
-
+    onAreaChangeC: PropTypes.func,
+    newTextPost: PropTypes.string
   }
-
 
 export default CreatePost

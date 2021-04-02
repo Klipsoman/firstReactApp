@@ -24,30 +24,34 @@ let initialState = {
         postMessage: 'Hi hi hi!'
     },
 ], 
-    newTextPost: 'TextHere',
+    newTextPost: '',
 }  
 
 export const PostsPageReducer = (state = initialState, action) => {
 
-    let post = {
-        id: 3,
-        firstName: 'Vladdddd',
-        lastName: 'Shishkin',
-        img: 'https://pbs.twimg.com/media/EXpP15yXYAAaQPU.jpg',
-        date: '2021.03.26',
-        likes: 20,
-        postTitle: 'heyhey',
-        postMessage: state.newTextPost
-    }
-
-    switch (action.type) {
-        case ADDPOST: 
-            state.posts.push(post)
-            state.newTextPost = ''
-            return state
-        case CHANGENEWPOSTTEXT: 
-             state.newTextPost = action.text
-             return state
+     switch (action.type) {
+        case ADDPOST: {
+            let stateCopy = {...state}
+            let post = {
+                id: 3,
+                firstName: 'Vladdddd',
+                lastName: 'Shishkin',
+                img: 'https://pbs.twimg.com/media/EXpP15yXYAAaQPU.jpg',
+                date: '2021.03.26',
+                likes: 20,
+                postTitle: 'heyhey',
+                postMessage: stateCopy.newTextPost
+            }
+            stateCopy.posts = [...state.posts]
+            stateCopy.posts.push(post)
+            stateCopy.newTextPost = ''
+            return stateCopy
+        }
+        case CHANGENEWPOSTTEXT: {
+             let stateCopy = {...state}
+             stateCopy.newTextPost = action.text
+             return stateCopy
+        }
         default:
             return state
     }

@@ -1,24 +1,32 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { addPostActionCreator, changeNewPostTextActionCreator } from '../../../../redux/PostsPageReducer'
 import CreatePost from './CreatePost'
+import { connect } from 'react-redux'
 
-const CreatePostContainer = (props) => {
-      
-    function onAreaChangeC(text){
-        props.store.dispatch(changeNewPostTextActionCreator(text))
+
+  let mapStateToProps = (state) => {
+    return {
+      posts: state.postsPage.posts,
+      newTextPost: state.postsPage.newTextPost
     }
-
-    function sendNewPostC(){
-       props.store.dispatch(addPostActionCreator())
-    }
-
-    return <CreatePost onAreaChangeC={onAreaChangeC} sendNewPostC={sendNewPostC} postsPage={props.store.getState().postsPage}/>
 }
 
-CreatePostContainer.propTypes = {
+let mapDispatchToProps = (dispatch) => {
+    return {
+        onAreaChangeC: (text) => {
+            dispatch(changeNewPostTextActionCreator(text))
+        },
+        sendNewPostC: () => {
+            dispatch(addPostActionCreator())
+        }
+    }
+}
+
+let CreatePostContainer = connect(mapStateToProps,mapDispatchToProps)(CreatePost)
+
+  CreatePostContainer.propTypes = {
     store: PropTypes.object,
-    state: PropTypes.object,
+    posts: PropTypes.object,
     addPost: PropTypes.func,
     changeNewPostText: PropTypes.func,
     postsPage: PropTypes.object,
