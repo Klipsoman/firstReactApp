@@ -23,8 +23,11 @@ const  Navigation = () => {
                    <span className="fa fa-signal"></span>
                </li>
                <li>
-
                   <NavLink to="/news" activeClassName={style.activeLink}>Новости</NavLink>    
+                   <span className="fa fa-newspaper-o"></span>
+               </li>
+               <li>
+                  <NavLink to="/users" activeClassName={style.activeLink}>Все пользователи</NavLink>    
                    <span className="fa fa-newspaper-o"></span>
                </li>
            </ul>

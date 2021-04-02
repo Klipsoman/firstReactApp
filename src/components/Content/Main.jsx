@@ -6,6 +6,7 @@ import Posts from './Posts/Posts'
 import Statistics from './Statistics/Statistics'
 import DialogsContainer from './Dialogs/DialogsContainer'
 import FriendsContainer from './Friends/FriendsContainer'
+import UsersContainer from './Users/UsersContainer'
 
 
 const Main = () => {
@@ -17,6 +18,7 @@ const Main = () => {
             <Route path='/friends' render={() => <FriendsContainer />} />
             <Route path='/statistics' component={Statistics} />
             <Route path='/news' component={News} />
+            <Route path='/users' component={UsersContainer} />
         </div>
     </main>
 }

@@ -31,7 +31,6 @@ export const PostsPageReducer = (state = initialState, action) => {
 
      switch (action.type) {
         case ADDPOST: {
-            let stateCopy = {...state}
             let post = {
                 id: 3,
                 firstName: 'Vladdddd',
@@ -40,17 +39,20 @@ export const PostsPageReducer = (state = initialState, action) => {
                 date: '2021.03.26',
                 likes: 20,
                 postTitle: 'heyhey',
-                postMessage: stateCopy.newTextPost
+                postMessage: state.newTextPost
             }
-            stateCopy.posts = [...state.posts]
-            stateCopy.posts.push(post)
-            stateCopy.newTextPost = ''
-            return stateCopy
+            return {
+                ...state,
+                // postMessage: state.newTextPost,
+                posts: [...state.posts, post],
+                newTextPost: ''
+            }
         }
         case CHANGENEWPOSTTEXT: {
-             let stateCopy = {...state}
-             stateCopy.newTextPost = action.text
-             return stateCopy
+             return {
+                 ...state,
+                 newTextPost: action.text
+             }
         }
         default:
             return state

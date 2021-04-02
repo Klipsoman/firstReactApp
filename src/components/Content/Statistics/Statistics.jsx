@@ -1,27 +1,18 @@
 import React, { useState } from 'react'
-import style from './Statistics.module.css'
+// import style from './Statistics.module.css'
 
 const Statistics = () => {
+    const [val,setVal] = useState('')
 
-
-    let [val, setVal] = useState('')
-    let [s,s2] = useState(0)
-    
-    return <div className={style.statisticsWrap}>
-
-        <textarea name="" id="" cols="30" rows="10" value={val} onChange={(e) => {
-            let a = (e.target.value)
-            a = a.split(' ')
-            s2(a.reduce((total,value)=> Number(total) + Number(value)))
-            setVal(e.target.value)
-            console.log(a)
-        }
-        } />
-        <p> {s} </p>
-
+    return <div>
+        <input type="radio" name="a" value='1' checked={ val === '1' ? true : false} onChange={(e)=>setVal(e.target.value)} id='a1'/>
+        <label htmlFor="a1">HTML</label>
+        <input type="radio" name="a" value='2' checked={ val === '2' ? true : false} onChange={(e)=>setVal(e.target.value)} id='a2'/>
+        <label htmlFor="a2">CSS</label>
+        <input type="radio" name="a" value='3' checked={ val === '3' ? true : false} onChange={(e)=>setVal(e.target.value)} id='a3'/>
+        <label htmlFor="a3">JS</label>
+        <p> {val === '3' ? 'yes' : 'nooo'} </p>
     </div>
-
-
 }
 
 export default Statistics

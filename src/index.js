@@ -4,38 +4,26 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/redux-store';
 import App from './App'
-// import PropTypes from 'prop-types'
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+
+// ReactDOM.render(
+//   <React.StrictMode> 
+//     <Provider store={store}>
+//     <App />
+//     </Provider>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
 
 ReactDOM.render(
-  <React.StrictMode> 
+  <BrowserRouter>
     <Provider store={store}>
-    <App />
+       <App />
     </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+    </BrowserRouter>,
+document.getElementById('root')
 );
-
-// ReRender.propTypes = {
-//   store: PropTypes.object,
-//   state: PropTypes.object,
-//   addPost: PropTypes.func,
-//   changeNewPostText: PropTypes.string,
-//   dispatch: PropTypes.func
-// }
-
-// let ReRender = () => {
-  
-// }
-
-// ReRender()
-
-
-
-// store.subscribe(ReRender)
-
-
-
 
 
 // If you want to start measuring performance in your app, pass a function
