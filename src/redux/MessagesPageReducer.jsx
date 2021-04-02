@@ -25,26 +25,18 @@ let initialState = {
 }
 
 export const MessagesPageReducer = (state = initialState, action) => {
-
     switch (action.type){
-
-        case CHANGENEWMESSAGETEXT: {
-            let stateCopy = {...state}
-            stateCopy.newMessageText = state.newMessageText
-            stateCopy.newMessageText = action.text
-            return stateCopy
-        }
-        case SENDMESSAGE: {
-            let stateCopy = {...state}
-            stateCopy.messages = [...state.messages]
-            stateCopy.messages.push(
-            {
-                id:5,
-                message: state.newMessageText
-            })
-            stateCopy.newMessageText = ''
-            return stateCopy
-        }
+        case CHANGENEWMESSAGETEXT: 
+            return {
+                ...state,
+                newMessageText: action.text
+            }
+        case SENDMESSAGE: 
+            return {
+                ...state,
+                messages: [...state.messages, {id:5, message: state.newMessageText}],
+                newMessageText: ''
+            }
         default: 
         return state
     }
