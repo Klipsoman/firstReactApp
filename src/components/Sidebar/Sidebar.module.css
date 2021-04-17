@@ -2,5 +2,6 @@
     padding: 10px;
     background-color:var(--bgc);
     box-shadow: 5px 5px 5px var(--box-shadow-color);
+    overflow: hidden;
 }
 

@@ -1,5 +1,6 @@
 .wrapperMain{
     padding: 10px 20px;
+    position: relative;
 
     background-color:var(--bgc);
     box-shadow: 5px 5px 5px var(--box-shadow-color);

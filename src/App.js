@@ -1,10 +1,11 @@
 import React from 'react'
 import './App.css'
 import Header from './components/Header/Header';
-import Sidebar from './components/Sidebar/Sidebar';
+// import Sidebar from './components/Sidebar/Sidebar';
 import Main from './components/Content/Main';
 import Footer from './components/Footer/Footer';
 import PropTypes from 'prop-types';
+import SidebarContainer from './components/Sidebar/SidebarContainer';
 
 
   function App(props) {
@@ -13,7 +14,7 @@ import PropTypes from 'prop-types';
    
    <div className="wrapper">
       <Header />
-      <Sidebar />
+      <SidebarContainer />
       <Main state={props.state}
             dispatch={props.dispatch}
             store={props.store}

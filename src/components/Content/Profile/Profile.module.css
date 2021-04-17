@@ -1,0 +1,22 @@
+.profileWrapp{
+    height: 600px;
+    padding: 10px 20px;
+
+    border: 2px dashed aliceblue;
+}
+.profileItems{
+    height: 400px;
+    /* background-color: aliceblue; */
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.profileInfo{
+    border: 2px solid aliceblue;
+    padding: 10px 20px;
+}
+.profilePhoto{
+    border: 2px solid aliceblue;
+    padding: 10px 20px;
+}
