@@ -8,17 +8,14 @@ import PropTypes from 'prop-types';
 import SidebarContainer from './components/Sidebar/SidebarContainer';
 
 
-  function App(props) {
+  function App() {
     
    return <div className="mainWrap">
    
    <div className="wrapper">
       <Header />
       <SidebarContainer />
-      <Main state={props.state}
-            dispatch={props.dispatch}
-            store={props.store}
-            /> 
+      <Main /> 
       <Footer />     
     </div>
 
